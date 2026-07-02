@@ -3,41 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joel | Inicio</title>
+    <title>Joel | Portfolio Interactivo</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#sobre-mi">Sobre mí</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-        <div class="hero">
-            <h1>Hola, soy Joel</h1>
-            <p>Estudiante de Ingeniería en Informática | Desarrollador</p>
-        </div>
-    </header>
+    <button id="theme-toggle" class="theme-btn">🌙 Oscuro</button>
 
-    <section id="sobre-mi">
-        <h2>Sobre mí</h2>
-        <p>Aquí puedes contar un poco sobre lo que estudias, las tecnologías que te gustan (como Python o Linux) y tus intereses fuera de la programación.</p>
-    </section>
-
-    <section id="proyectos">
-        <h2>Mis Proyectos</h2>
-        <div class="proyecto-card">
-            <h3>Proyecto 1</h3>
-            <p>Descripción breve de algún script o programa que hayas hecho.</p>
+    <section class="full-section hero">
+        <div class="content-wrapper">
+            <img src="assets/img/mi-foto.jpeg" alt="Foto de Joel" class="avatar">
+            <h1>¡Hola! Soy Joel 👋</h1>
+            <p>Estudiante de Ingeniería en Informática en la FIUBA.</p>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Joel Galindo. Construido desde cero.</p>
-    </footer>
+    <section class="full-section">
+        <div class="content-wrapper">
+            <h2>💻 Lo que hago</h2>
+            <p>Me muevo principalmente entre el desarrollo de software y la línea de comandos. Mis herramientas de todos los días incluyen Python, C y scripts de Bash/Zsh en entornos Linux y macOS.</p>
+        </div>
+    </section>
 
+    <section class="full-section">
+        <div class="content-wrapper">
+            <h2>🚀 Proyectos</h2>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <h3>Gestor universitario</h3>
+                    <p>Plataforma web para la administración y control de un curso universitario.</p>
+                </div>
+                <div class="project-item">
+                    <h3>Algoritmos</h3>
+                    <p>Resolución de problemas de la facultad y optimización de código.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="full-section">
+        <div class="content-wrapper">
+            <h2>🎻 Algo más sobre mí</h2>
+            <p>La programación no es lo único a lo que le dedico horas de práctica. Llevo tiempo estudiando violin a través del método Suzuki.</p>
+        </div>
+    </section>
+
+    <section class="full-section contact-section">
+        <div class="content-wrapper">
+            <h2>📫 Hablemos</h2>
+            <p>¿Tienes alguna idea en mente, un proyecto, o simplemente quieres charlar sobre código o música? ¡Contactame!</p>
+            <p> gjoel6055@gmail.com </p>
+            <div class="social-links">
+                <a href="https://github.com/gjoel6055-wq" target="_blank" class="social-btn">GitHub</a>
+                <a href="https://linkedin.com/in/tu-perfil" target="_blank" class="social-btn">LinkedIn</a>
+                <a href="https://www.instagram.com/rodgal_215/" target="_blank" class="social-btn">Instagram</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>Hecho con código, café y música.</p>
+        </footer>
+    </section>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
