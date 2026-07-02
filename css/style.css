@@ -1,32 +1,32 @@
-/* --- Variables para fondos alternados (Tema Claro) --- */
+/* --- Variables para el Tema Claro (Pergamino y Tinta) --- */
 :root {
-    --bg-1: #fcefe9; /* Fondo pastel suave */
-    --bg-2: #ffffff; /* Fondo blanco puro */
-    --text-color: #333333;
-    --accent: #ff6b6b;
-    --shadow: 0 8px 30px rgba(0,0,0,0.05);
+    --bg-1: #f4f0e6; /* Blanco pergamino / papel antiguo */
+    --bg-2: #eae6dd; /* Pergamino ligeramente más oscuro */
+    --text-color: #2b2b2b; /* Gris carbón casi negro (tinta) */
+    --accent: #5c5c5c; /* Gris poético plomizo */
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
-/* --- Variables para el Tema Oscuro --- */
+/* --- Variables para el Tema Oscuro (Noche de Insomnio) --- */
 [data-theme="dark"] {
-    --bg-1: #1a1a2e; /* Azul noche profundo */
-    --bg-2: #16213e; /* Azul noche ligeramente más oscuro/claro para contrastar */
-    --text-color: #e6e6e6;
-    --accent: #4facfe;
-    --shadow: 0 8px 30px rgba(0,0,0,0.3);
+    --bg-1: #1c1c1c; /* Negro desteñido / textura de pizarra */
+    --bg-2: #262626; /* Gris muy oscuro para contrastar */
+    --text-color: #dcdcdc; /* Blanco ceniza, no lastima la vista */
+    --accent: #9ca3af; /* Plata avejentada */
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+    transition: background-color 0.6s ease, color 0.6s ease, border-color 0.6s ease, filter 0.6s ease;
 }
 
 body {
-    font-family: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, sans-serif;
+    /* Fuentes clásicas Serif para dar aspecto de libro de poesía */
+    font-family: 'Baskerville', 'Palatino Linotype', 'Times New Roman', serif;
     color: var(--text-color);
-    /* Quitamos el display flex y los padding del body para que las franjas toquen los bordes */
     overflow-x: hidden;
 }
 
@@ -35,27 +35,28 @@ body {
     position: fixed;
     top: 20px;
     right: 20px;
-    background-color: var(--bg-2);
+    background-color: var(--bg-1);
     color: var(--text-color);
-    border: 3px solid var(--accent);
-    padding: 10px 20px;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 1rem;
+    border: 1px solid var(--accent); /* Borde fino y elegante */
+    padding: 8px 18px;
+    border-radius: 4px; /* Cuadrado como una tecla antigua */
+    font-family: 'Courier', 'Courier New', monospace; /* Fuente de máquina de escribir */
+    font-size: 0.9rem;
+    letter-spacing: 1px;
     cursor: pointer;
     box-shadow: var(--shadow);
-    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.3s ease, background-color 0.3s ease;
     z-index: 1000;
 }
 
 .theme-btn:hover {
-    transform: scale(1.1) rotate(-3deg);
+    transform: translateY(-2px); /* Movimiento sutil, sin rotaciones bruscas */
+    background-color: var(--bg-2);
 }
 
 /* --- Estructura de Secciones a Pantalla Completa --- */
 .full-section {
     width: 100vw;
-    /* Cada sección ocupa al menos casi toda la pantalla verticalmente */
     min-height: 80vh;
     display: flex;
     flex-direction: column;
@@ -64,7 +65,6 @@ body {
     padding: 6rem 2rem;
 }
 
-/* Aquí está la magia: intercala los fondos de las secciones automáticamente */
 .full-section:nth-child(odd) {
     background-color: var(--bg-1);
 }
@@ -73,7 +73,6 @@ body {
     background-color: var(--bg-2);
 }
 
-/* Contenedor interno para que el texto no se haga gigante en monitores anchos */
 .content-wrapper {
     max-width: 800px;
     width: 100%;
@@ -82,31 +81,39 @@ body {
 
 /* --- Tipografía y Elementos Visuales --- */
 h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     margin-bottom: 0.5rem;
-    color: var(--accent);
+    font-weight: normal;
+    font-style: italic; /* Toque literario */
 }
 
 h2 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
-    color: var(--text-color);
+    font-weight: normal;
+    border-bottom: 1px solid var(--accent); /* Línea divisoria elegante */
+    padding-bottom: 10px;
+    display: inline-block;
 }
 
 p {
     font-size: 1.2rem;
-    line-height: 1.6;
+    line-height: 1.7;
     margin-bottom: 1.5rem;
 }
 
+/* Magia TTPD en las fotos: Filtro blanco y negro/sepia */
 .avatar {
     width: 180px;
     height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    border: 6px solid var(--accent);
+    border: 1px solid var(--accent);
+    padding: 5px; /* Efecto de marco paspartú */
+    background-color: var(--bg-1);
     box-shadow: var(--shadow);
     margin-bottom: 1.5rem;
+
 }
 
 /* --- Grilla para proyectos --- */
@@ -118,20 +125,23 @@ p {
 }
 
 .project-item {
-    background-color: var(--bg-1); /* Contraste con el bg-2 de la sección */
-    padding: 2rem;
-    border-radius: 20px;
-    border: 3px dashed var(--accent);
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background-color: var(--bg-1);
+    padding: 2.5rem 1.5rem;
+    border-radius: 4px;
+    border: 1px solid var(--accent); /* Bordes rectos, minimalistas */
+    transition: transform 0.4s ease;
 }
 
 .project-item:hover {
-    transform: translateY(-8px);
+    transform: translateY(-5px); /* Elevación elegante */
 }
 
 .project-item h3 {
     margin-bottom: 0.5rem;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    font-family: 'Courier', 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /* --- Sección de Contacto --- */
@@ -151,24 +161,94 @@ p {
     text-decoration: none;
     color: var(--text-color);
     background-color: transparent;
-    padding: 0.8rem 1.8rem;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    border: 3px solid var(--accent);
-    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s, color 0.3s;
+    padding: 0.6rem 1.5rem;
+    border-radius: 4px;
+    font-family: 'Courier', 'Courier New', monospace;
+    font-size: 1rem;
+    border: 1px solid var(--accent);
+    transition: all 0.3s ease;
 }
 
 .social-btn:hover {
-    transform: scale(1.1) rotate(3deg);
-    background-color: var(--accent);
+    background-color: var(--text-color);
     color: var(--bg-1);
 }
 
 /* --- Pie de página --- */
 footer {
     margin-top: 5rem;
-    font-weight: bold;
-    font-size: 1.1rem;
+    font-family: 'Courier', 'Courier New', monospace;
+    font-size: 0.9rem;
     color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* --- Galería de Música con Texto --- */
+.music-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem; /* Más espacio para respirar */
+    margin-top: 3.5rem;
+}
+
+.music-card {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    background-color: transparent; /* Sin fondo para que parezca texto sobre papel */
+    padding: 0;
+}
+
+.music-card:nth-child(even) {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.music-photo {
+    width: 40%;
+    max-width: 280px;
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid var(--accent);
+    padding: 5px; /* Marco de foto antigua */
+    background-color: var(--bg-1);
+    flex-shrink: 0;
+
+}
+
+.music-info {
+    flex-grow: 1;
+}
+
+.music-info h3 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    font-family: 'Baskerville', 'Palatino Linotype', serif;
+    font-style: italic;
+}
+
+.music-info p {
+    margin-bottom: 0;
+}
+
+/* --- Diseño Adaptable para Celulares (Mobile) --- */
+@media (max-width: 768px) {
+    .music-card, .music-card:nth-child(even) {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .music-photo {
+        width: 100%;
+        height: auto;
+        /* Aseguramos que la foto del violín vertical no se recorte en móvil */
+        aspect-ratio: auto;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr; /* Una sola columna en celulares */
+    }
 }
