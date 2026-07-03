@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, sans-serif;
+    background-color: #fdf2f8;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.contenedor-carta {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    z-index: 10;
+}
+
+h1 {
+    color: #e11d48;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.mensaje {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+    height: 50px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#btn-si {
+    background-color: #e11d48;
+    color: white;
+    box-shadow: 0 4px 15px rgba(225, 29, 72, 0.4);
+}
+
+#btn-si:hover {
+    transform: scale(1.1);
+}
+
+#btn-no {
+    background-color: #e5e7eb;
+    color: #4b5563;
+    position: absolute;
+}
+
+.oculto {
+    display: none;
+    margin-top: 2rem;
+    font-size: 1.3rem;
+    color: #e11d48;
+    font-weight: bold;
+}
+
+/* --- Estilos extra para el formulario del Generador --- */
+.input-form {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.textarea-form {
+    height: 120px;
+    resize: none;
+}
+
+.btn-principal {
+    background-color: #e11d48;
+    color: white;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.url-resultado {
+    background-color: #f3f4f6;
+    color: #374151;
+    font-size: 0.9rem;
+    cursor: copy;
+}
